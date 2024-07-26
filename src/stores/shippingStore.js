@@ -2,9 +2,9 @@ import { defineStore } from 'pinia'
 
 export const useShippingStore = defineStore('shippingStore', {
   state: () => ({
-    destination: "none",
+    destination: "",
     weight: null,
-    priority: "other",
+    priority: "",
     result: null
   }),
   actions: {
@@ -43,8 +43,12 @@ export const useShippingStore = defineStore('shippingStore', {
           additionalCost = 50;
         }
       }
+      const currencyFormatter = new Intl.NumberFormat('en-EN', {
+        style: 'currency',
+        currency: 'USD',
+      });
 
-      this.result = (weight * baseCost) + additionalCost;
+      this.result = currencyFormatter.format((weight * baseCost) + additionalCost);
     }
   }
 });

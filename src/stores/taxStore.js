@@ -39,7 +39,13 @@ export const useTaxStore = defineStore('taxStore', {
         return tax;
       }
 
-      this.result = calculateFinalTax(income);
+      const currencyFormatter = new Intl.NumberFormat('en-EN', {
+        style: 'currency',
+        currency: 'USD',
+      });
+
+      this.result = currencyFormatter.format(calculateFinalTax(income));
+      this.result = currencyFormatter.format(income)
     }
   }
 });
