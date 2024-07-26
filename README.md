@@ -326,7 +326,7 @@ This application includes an interactive map feature that allows users to select
 The map feature is integrated into the application using Vue Router. The route configuration might look like this:
 ```
 {
-  path: '/map',
+  path: '/',
   name: 'MapView',
   component: MapView
 }
@@ -345,4 +345,4 @@ The Pinia store is used to manage the state for location selection, markers, and
 - toggleRouteVisibility(): Toggles the visibility of the routing summary and controls.
 
 ### How to Access
-- MapView: Navigate to http://localhost:8080/map to access the interactive map feature.
+- MapView: Navigate to http://localhost:8080/ to access the interactive map feature.
